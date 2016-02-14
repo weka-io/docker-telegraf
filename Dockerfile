@@ -23,7 +23,4 @@ ENV HOST_PROC /rootfs/proc
 ENV HOST_SYS /rootfs/sys
 
 ADD telegraf.conf /config/telegraf.conf
-CMD sh
-#CMD /usr/bin/telegraf --config=/etc/telegraf/telegraf.conf
-#ENTRYPOINT /usr/local/bin/dockerize -template /config/telegraf.conf:/etc/telegraf/telegraf.conf
 CMD /usr/local/bin/dockerize -template /config/telegraf.conf:/etc/telegraf/telegraf.conf /usr/bin/telegraf --config=/etc/telegraf/telegraf.conf
