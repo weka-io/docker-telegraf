@@ -1,0 +1,14 @@
+# for testing
+telegraf:
+  build: .
+  net: "host"
+  volumes:
+    - /sys:/rootfs/sys:ro
+    - /proc:/rootfs/proc:ro
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+  environment:
+    - 'HOST_PROC=/rootfs/proc'
+    - 'HOST_SYS=/rootfs/sys'
+    - 'INFLUXDB_HOSTNAME=xxxx'
+    - 'INFLUXDB_PASSWORD=xxxx'
+    - 'INFLUXDB_USERNAME=xxxx'
